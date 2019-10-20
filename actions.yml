@@ -23,7 +23,7 @@ inputs:
     description: |
       List of arguments to send to cpplint
       Default is --extensions=h,hpp,c,cpp,cc,cu,hh,ipp.
-    default: '--extensions=h,hpp,c,cpp,cc,cu,hh,ipp,'
+    default: '--extensions=h,hpp,c,cpp,cc,cu,hh,ipp'
   targets:
     description: |
       List of file list arguments to send to cpplint
