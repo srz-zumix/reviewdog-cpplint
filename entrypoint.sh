@@ -5,6 +5,7 @@ cd "$GITHUB_WORKSPACE"
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 if [ -n "${INPUT_DEBUG}" ]; then
+    env
     echo "cpplint option"
     echo "  flags   : ${INPUT_FLAGS}"
     echo "  targets : ${INPUT_TARGETS}"
@@ -13,8 +14,8 @@ if [ -n "${INPUT_DEBUG}" ]; then
     echo "  level   : ${INPUT_LEVEL}"
     echo "  options : ${INPUT_REVIEWDOG_OPTIONS}"
 
-    echo "cpplint: ${INPUT_FLAGS} ${INPUT_TARGETS}"
-    cpplint ${INPUT_FLAGS} ${INPUT_TARGETS} 2>&1
+    # echo "cpplint: ${INPUT_FLAGS} ${INPUT_TARGETS}"
+    # cpplint ${INPUT_FLAGS} ${INPUT_TARGETS} 2>&1
 fi
 
 function reviewdog_cpplint() {
