@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd "$GITHUB_WORKSPACE"
+cd "${GITHUB_WORKSPACE}"
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
@@ -42,5 +42,5 @@ if [ -n "${INPUT_REVIEWDOG_DIFF}" ]; then
     reviewdog_cpplint "-diff=""${INPUT_REVIEWDOG_DIFF}"""
 else
     cpplint ${INPUT_FLAGS} ${INPUT_TARGETS} 2>&1 \
-      | reviewdog -efm="%f:%l: %m" -name="cpplint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
+      | reviewdog -efm="%f:%l: %m" -name="cpplint" -reporter=${INPUT_REPORTER} -level=${INPUT_LEVEL}
 fi
