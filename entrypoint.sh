@@ -5,7 +5,7 @@ cd "$GITHUB_WORKSPACE"
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 if [ -n "${INPUT_DEBUG}" ]; then
-    env
+    # env
     echo "cpplint option"
     echo "  flags   : ${INPUT_FLAGS}"
     echo "  targets : ${INPUT_TARGETS}"
@@ -28,7 +28,7 @@ function reviewdog_cpplint() {
 }
 
 if [ "${INPUT_REPORTER}" = "local" ]; then
-    if [ "`echo ${INPUT_REVIEWDOG_OPTIONS}} | grep -diff`" ]; then
+    if [ "`echo ${INPUT_REVIEWDOG_OPTIONS}} | grep "-diff"`" ]; then
         reviewdog_cpplint
     else
         reviewdog_cpplint "-diff=""git diff origin/${GITHUB_BASE_REF}"""
