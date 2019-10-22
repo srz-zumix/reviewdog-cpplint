@@ -20,7 +20,7 @@ if [ -n "${INPUT_DEBUG}" ]; then
     echo "  options : ${INPUT_REVIEWDOG_OPTIONS}"
     echo "  diff    : ${INPUT_REVIEWDOG_DIFF}"
 
-    cpplint ${INPUT_FLAGS} ${INPUT_TARGETS}
+    # cpplint ${INPUT_FLAGS} ${INPUT_TARGETS}
 fi
 
 function reviewdog_cpplint() {
@@ -41,6 +41,6 @@ if [ -n "${INPUT_REVIEWDOG_DIFF}" ]; then
     verbose "reviewdog cpplint with diff option"
     reviewdog_cpplint "-diff=""${INPUT_REVIEWDOG_DIFF}"""
 else
-    cpplint ${INPUT_FLAGS} ${INPUT_TARGETS} 2>&1 \
-      | reviewdog -efm="%f:%l: %m" -name="cpplint" -reporter=${INPUT_REPORTER} -level=${INPUT_LEVEL}
+    verbose "reviewdog cpplint"
+    reviewdog_cpplint
 fi
