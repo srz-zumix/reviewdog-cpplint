@@ -17,15 +17,11 @@ if [ -n "${INPUT_DEBUG}" ]; then
     echo "reviewdog option"
     echo "  reporter: ${INPUT_REPORTER}"
     echo "  level   : ${INPUT_LEVEL}"
-    echo "  options : ${INPUT_REVIEWDOG_OPTIONS}"
-    echo "  diff    : ${INPUT_REVIEWDOG_DIFF}"
-
-    # cpplint ${INPUT_FLAGS} ${INPUT_TARGETS}
 fi
 
 function reviewdog_cpplint() {
     cpplint ${INPUT_FLAGS} ${INPUT_TARGETS} 2>&1 \
-      | reviewdog -efm="%f:%l: %m" -name="cpplint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}" "${INPUT_REVIEWDOG_OPTIONS}" "$1"
+      | reviewdog -efm="%f:%l: %m" -name="cpplint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}" $*
 }
 
 if [ -z "${INPUT_REVIEWDOG_DIFF}" ]; then
