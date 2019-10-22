@@ -12,5 +12,5 @@ jobs:
         github_token: ${{ secrets.github_token }}
         # reporter: github-pr-review
         reporter: github-pr-check
-        flags: --linelength=10
+        flags: --linelength=50
         debug: true
