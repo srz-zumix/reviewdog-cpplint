@@ -13,6 +13,8 @@ if [ -n "${INPUT_DEBUG}" ]; then
     echo "  level   : ${INPUT_LEVEL}"
     echo "  options : ${INPUT_REVIEWDOG_OPTIONS}"
     echo "  diff    : ${INPUT_REVIEWDOG_DIFF}"
+
+    cpplint ${INPUT_FLAGS} ${INPUT_TARGETS}
 fi
 
 function reviewdog_cpplint() {
