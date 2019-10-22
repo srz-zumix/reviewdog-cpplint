@@ -1,4 +1,6 @@
 // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//
+#include "test.hpp"
 
 class Hoge
 {
