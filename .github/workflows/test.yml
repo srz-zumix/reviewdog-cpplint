@@ -13,5 +13,6 @@ jobs:
       with:
         github_token: ${{ secrets.github_token }}
         reporter: local
-        reviewdog_options: "-diff="git diff HEAD^""
+        flags: --linelength=10
+        reviewdog_options: '-diff="git diff HEAD^"'
         debug: true
