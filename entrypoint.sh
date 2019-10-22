@@ -26,9 +26,9 @@ function reviewdog_cpplint() {
 
 if [ "${INPUT_REPORTER}" = "local" ]; then
     if [ -n "${GITHUB_BASE_REF}" ]; then
-        export INPUT_REVIEWDOG_DIFF="-diff=""git diff origin/${GITHUB_BASE_REF}"""
+        export INPUT_REVIEWDOG_DIFF="git diff origin/${GITHUB_BASE_REF}"
     else
-        export INPUT_REVIEWDOG_DIFF="-diff=""git diff HEAD^"""
+        export INPUT_REVIEWDOG_DIFF="git diff HEAD^"
     fi
 fi
 
