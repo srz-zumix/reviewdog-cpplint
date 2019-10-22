@@ -25,7 +25,7 @@ fi
 
 function reviewdog_cpplint() {
     cpplint ${INPUT_FLAGS} ${INPUT_TARGETS} 2>&1 \
-      | reviewdog -efm="%f:%l: %m" -name="cpplint" "$1" "${INPUT_REVIEWDOG_OPTIONS}" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
+      | reviewdog -efm="%f:%l: %m" -name="cpplint" $1 ${INPUT_REVIEWDOG_OPTIONS} -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
 }
 
 if [ -z "${INPUT_REVIEWDOG_DIFF}" ]; then
