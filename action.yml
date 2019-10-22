@@ -12,8 +12,8 @@ inputs:
   reporter:
     description: |
       Reporter of reviewdog command [github-pr-check,github-pr-review].
-      Default is github-pr-check.
-    default: 'github-pr-check'
+      Default is github-pr-review.
+    default: 'github-pr-review'
   reviewdog_options:
     description: |
       Additional options of reviewdog command.
