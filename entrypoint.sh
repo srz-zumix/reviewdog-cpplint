@@ -28,10 +28,14 @@ function reviewdog_cpplint() {
 }
 
 if [ "${INPUT_REPORTER}" = "local" ]; then
-    if [ "`echo ${INPUT_REVIEWDOG_OPTIONS}} | grep "-diff"`" ]; then
+    if [ "`echo ${INPUT_REVIEWDOG_OPTIONS}} | grep -e ""-diff""`" ]; then
         reviewdog_cpplint
     else
-        reviewdog_cpplint "-diff=""git diff origin/${GITHUB_BASE_REF}"""
+        if [ -n "${GITHUB_BASE_REF}" ]; then
+            reviewdog_cpplint "-diff=""git diff origin/${GITHUB_BASE_REF}"""
+        else
+            reviewdog_cpplint "-diff=""git diff HEAD^"""
+        fi
     fi
 else
     reviewdog_cpplint
