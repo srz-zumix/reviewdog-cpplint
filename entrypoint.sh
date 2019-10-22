@@ -4,6 +4,12 @@ cd "$GITHUB_WORKSPACE"
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+function verbose() {
+    if [ -n "${INPUT_DEBUG}" ]; then
+        echo "$*"
+    fi
+}
+
 if [ -n "${INPUT_DEBUG}" ]; then
     echo "cpplint option"
     echo "  flags   : ${INPUT_FLAGS}"
@@ -32,6 +38,7 @@ if [ -z "${INPUT_REVIEWDOG_DIFF}" ]; then
     fi
 fi
 if [ -n "${INPUT_REVIEWDOG_DIFF}" ]; then
+    verbose "reviewdog cpplint with diff option"
     reviewdog_cpplint "-diff=""${INPUT_REVIEWDOG_DIFF}"""
 else
     reviewdog_cpplint
