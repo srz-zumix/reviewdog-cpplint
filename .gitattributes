@@ -2,4 +2,4 @@
 *.gitattributes text eol=lf
 *.gitignore text eol=lf
 
-*.* text eol=lf
+* text eol=lf
