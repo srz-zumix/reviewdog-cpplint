@@ -17,6 +17,8 @@ if [ -n "${INPUT_DEBUG}" ]; then
     echo "reviewdog option"
     echo "  reporter: ${INPUT_REPORTER}"
     echo "  level   : ${INPUT_LEVEL}"
+
+    cpplint ${INPUT_FLAGS} ${INPUT_TARGETS}
 fi
 
 function reviewdog_cpplint() {
