@@ -16,3 +16,5 @@ int main(int, const char**)
     Hoge hoge(42);
     return hoge.getA();
 }
+
+// EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
