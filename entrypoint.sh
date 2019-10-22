@@ -12,6 +12,7 @@ if [ -n "${INPUT_DEBUG}" ]; then
     echo "  reporter: ${INPUT_REPORTER}"
     echo "  level   : ${INPUT_LEVEL}"
     echo "  options : ${INPUT_REVIEWDOG_OPTIONS}"
+    echo "  diff    : ${INPUT_REVIEWDOG_DIFF}"
 fi
 
 function reviewdog_cpplint() {
@@ -19,16 +20,17 @@ function reviewdog_cpplint() {
       | reviewdog -efm="%f:%l: %m" -name="cpplint" "$1" ${INPUT_REVIEWDOG_OPTIONS} -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
 }
 
-if [ "${INPUT_REPORTER}" = "local" ]; then
-    if [ "`echo ${INPUT_REVIEWDOG_OPTIONS}} | grep -e ""-diff""`" ]; then
-        reviewdog_cpplint
-    else
+if [ -z "${INPUT_REVIEWDOG_DIFF}" ]; then
+    if [ "${INPUT_REPORTER}" = "local" ]; then
         if [ -n "${GITHUB_BASE_REF}" ]; then
-            reviewdog_cpplint "-diff=""git diff origin/${GITHUB_BASE_REF}"""
+            export INPUT_REVIEWDOG_DIFF="-diff=""git diff origin/${GITHUB_BASE_REF}"""
         else
-            reviewdog_cpplint "-diff=""git diff HEAD^"""
+            export INPUT_REVIEWDOG_DIFF="-diff=""git diff HEAD^"""
         fi
     fi
+fi
+if [ -n "${INPUT_REVIEWDOG_DIFF}" ]; then
+    reviewdog_cpplint "-diff=""${INPUT_REVIEWDOG_DIFF}"""
 else
     reviewdog_cpplint
 fi

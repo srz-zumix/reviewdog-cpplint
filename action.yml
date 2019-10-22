@@ -19,6 +19,11 @@ inputs:
       Additional options of reviewdog command.
       Default is empty.
     default: ''
+  reviewdog_diff:
+    description: |
+      -diff options of reviewdog command.
+      Default is empty.
+    default: ''
   flags:
     description: |
       List of arguments to send to cpplint
@@ -40,6 +45,7 @@ runs:
     - ${{ inputs.level }}
     - ${{ inputs.reporter }}
     - ${{ inputs.reviewdog_options }}
+    - ${{ inputs.reviewdog_diff }}
     - ${{ inputs.flags }}
     - ${{ inputs.targets }}
     - ${{ inputs.debug }}
