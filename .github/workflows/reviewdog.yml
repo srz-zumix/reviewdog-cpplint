@@ -1,7 +1,17 @@
 name: Reviewdog
-on: [push]
+on: [push, pull_request]
 
 jobs:
+  cpplint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: srz-zumix/reviewdog-cpplint@master
+      with:
+        github_token: ${{ secrets.github_token }}
+        reporter: github-pr-review
+        flags: --linelength=50 # Optional
+
   shellcheck:
     name: runner / shellcheck
     runs-on: ubuntu-latest

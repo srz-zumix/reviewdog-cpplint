@@ -16,12 +16,12 @@ inputs:
     default: 'github-pr-review'
   flags:
     description: |
-      List of arguments to send to cpplint
-      Default is --extensions=h,hpp,c,cpp,cc,cu,hh,ipp.
+      List of arguments to send to cpplint.
+      Default is '--extensions=h,hpp,c,cpp,cc,cu,hh,ipp'.
     default: '--extensions=h,hpp,c,cpp,cc,cu,hh,ipp'
   targets:
     description: |
-      List of file list arguments to send to cpplint
+      List of file list arguments to send to cpplint.
       Default is '--recursive .'.
     default: '--recursive .'
   debug:
