@@ -1,6 +1,7 @@
 // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 //
 #include "test.hpp"
+#include <iostream>
 
 class Hoge
 {
@@ -11,10 +12,10 @@ public:
 private:
     int m_a;
 };
+
 int main(int, const char**)
 {
     Hoge hoge(42);
-    return hoge.getA();
+    std::cout << hoge.getA() << std::endl;
+    return 0;
 }
-
-// EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
