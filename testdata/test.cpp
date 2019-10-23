@@ -16,6 +16,6 @@ private:
 int main(int, const char**)
 {
     Hoge hoge(42);
-    std::count << hoge.getA() << std::endl;
+    std::cout << hoge.getA() << std::endl;
     return 0;
 }
