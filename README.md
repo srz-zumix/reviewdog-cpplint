@@ -1,6 +1,10 @@
 # GitHub Action: Run cpplint with reviewdog
 
 [![Docker Image CI Status](https://github.com/srz-zumix/reviewdog-cpplint/workflows/Docker%20Image%20CI/badge.svg?branch=master)](https://github.com/srz-zumix/iutest/actions)
+[![Release](https://img.shields.io/github/release/srz-zumix/reviewdog-cpplint.svg?maxAge=43200)](https://github.com/srz-zumix/reviewdog-cpplint/releases)
+
+[![github-pr-review sample](https://user-images.githubusercontent.com/1439172/67346720-a257f780-f57a-11e9-8f02-88b8235c2116.png)](https://github.com/srz-zumix/reviewdog-cpplint/pull/2)
+
 
 This action runs [cpplint](https://pypi.org/project/cpplint/) with [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests to improve code review experience.
 
