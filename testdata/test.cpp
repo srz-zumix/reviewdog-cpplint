@@ -32,5 +32,6 @@ int main(int, const char**)
 {
     Hoge hoge(42);
     longest_identifier();
-    return hoge.getA();
+    std::cout << hoge.getA() << std::endl;
+    return 0;
 }

@@ -13,8 +13,9 @@ jobs:
       run: |
         cd testdata
         g++ --version
-        g++ ./test.cpp
-        ./a
+        g++ ./test.cpp -o test
+        ls
+        ./test
     - uses: srz-zumix/reviewdog-cpplint@master
       with:
         github_token: ${{ secrets.github_token }}
