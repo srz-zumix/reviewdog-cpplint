@@ -17,7 +17,7 @@ inputs:
   flags:
     description: |
       List of arguments to send to cpplint.
-      Default is --extensions=h,hpp,c,cpp,cc,cu,hh,ipp.
+      Default is '--extensions=h,hpp,c,cpp,cc,cu,hh,ipp'.
     default: '--extensions=h,hpp,c,cpp,cc,cu,hh,ipp'
   targets:
     description: |
