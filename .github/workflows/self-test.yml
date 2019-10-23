@@ -2,13 +2,19 @@ name: Self test
 on: [push]
 
 jobs:
-  cpplint:
+  test:
     runs-on: ubuntu-latest
     steps:
     - name: clone
       uses: actions/checkout@master
       with:
         fetch-depth: 2
+    - name: testbuild
+      run: |
+        cd testdata
+        g++ --version
+        g++ ./test.cpp
+        ./a
     - uses: srz-zumix/reviewdog-cpplint@master
       with:
         github_token: ${{ secrets.github_token }}
