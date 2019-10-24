@@ -38,4 +38,5 @@ runs:
     - ${{ inputs.targets }}
     - ${{ inputs.debug }}
 branding:
-  icon: 'edit'
+  icon: 'plus-circle'
+  # color: ''
