@@ -39,4 +39,4 @@ runs:
     - ${{ inputs.debug }}
 branding:
   icon: 'plus-circle'
-  # color: ''
+  color: ''
