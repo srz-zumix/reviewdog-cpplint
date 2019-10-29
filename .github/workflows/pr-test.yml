@@ -13,4 +13,3 @@ jobs:
         # reporter: github-pr-review
         reporter: github-pr-check
         flags: --linelength=50
-        debug: true

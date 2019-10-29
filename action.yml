@@ -7,13 +7,15 @@ inputs:
     description: 'GITHUB_TOKEN'
     required: true
   level:
-    description: 'Report level for reviewdog [info,warning,error]'
+    description: |
+      Report level for reviewdog [info,warning,error].
+      Default is 'error'.
     default: 'error'
   reporter:
     description: |
       Reporter of reviewdog command [github-pr-check,github-pr-review].
-      Default is github-pr-review.
-    default: 'github-pr-review'
+      Default is 'github-pr-check'.
+    default: 'github-pr-check'
   flags:
     description: |
       List of arguments to send to cpplint.
@@ -39,4 +41,4 @@ runs:
     - ${{ inputs.debug }}
 branding:
   icon: 'plus-circle'
-  color: ''
+  color: 'blue'

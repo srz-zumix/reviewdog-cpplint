@@ -16,10 +16,3 @@ jobs:
         g++ ./test.cpp -o test
         ls
         ./test
-    - uses: srz-zumix/reviewdog-cpplint@master
-      with:
-        github_token: ${{ secrets.github_token }}
-        reporter: local
-        flags: --linelength=50
-        reviewdog_diff: 'git diff HEAD^'
-        debug: true

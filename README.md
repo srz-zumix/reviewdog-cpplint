@@ -19,22 +19,22 @@ This action runs [cpplint](https://pypi.org/project/cpplint/) with [reviewdog](h
 
 Optional. Report level for reviewdog [info,warning,error].
 It's same as `-level` flag of reviewdog.
+Default is `error`.
 
 ### `reporter`
 
 Reporter of reviewdog command [github-pr-check,github-pr-review].
-Default is github-pr-check.
-github-pr-review can use Markdown and add a link to rule page in reviewdog reports.
+Default is `github-pr-check`.
 
 ### `flags`
 
 Optional. List of arguments to send to cpplint.
-Default is '--extensions=h,hpp,c,cpp,cc,cu,hh,ipp'.
+Default is `--extensions=h,hpp,c,cpp,cc,cu,hh,ipp`.
 
 ### `targets`
 
 Optional. List of file list arguments to send to cpplint.
-Default is '--recursive .'.
+Default is `--recursive .`.
 
 ## Example Usage
 
