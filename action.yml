@@ -26,9 +26,6 @@ inputs:
       List of file list arguments to send to cpplint.
       Default is '--recursive .'.
     default: '--recursive .'
-  debug:
-    description: 'action debug option'
-    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -38,7 +35,6 @@ runs:
     - ${{ inputs.reporter }}
     - ${{ inputs.flags }}
     - ${{ inputs.targets }}
-    - ${{ inputs.debug }}
 branding:
   icon: 'plus-circle'
   color: 'blue'
