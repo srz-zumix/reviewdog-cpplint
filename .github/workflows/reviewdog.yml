@@ -24,4 +24,5 @@ jobs:
           reporter: github-pr-review # Change reporter.
           path: "." # Optional.
           pattern: "*.sh" # Optional.
-          exclude: "./.git/*,SC2086" # Optional.
+          exclude: "./.git/*" # Optional.
+          shellcheck_flags: "--external-sources -e SC2086"
