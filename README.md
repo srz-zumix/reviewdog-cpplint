@@ -1,3 +1,9 @@
+# Caution!
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+Use: [https://github.com/reviewdog/action-cpplint](https://github.com/reviewdog/action-cpplint)
+
 # GitHub Action: Run cpplint with reviewdog
 
 [![Docker Image CI Status](https://github.com/srz-zumix/reviewdog-cpplint/workflows/Docker%20Image%20CI/badge.svg?branch=master)](https://github.com/srz-zumix/iutest/actions)
